@@ -25,10 +25,10 @@ const Details = ({content})=>{
         <br />
         {frontmatter.title}
       </h1>
-      <h2 className="subtitle">
+      {/* <h2 className="subtitle">
         {frontmatter.subtitlePrefix}{" "}
         <span className="highlighted">{frontmatter.subtitleHighlight}</span>
-      </h2>
+      </h2> */}
       <div className="description">{rawMarkdownBody}</div>
     </StyledSection>
     )

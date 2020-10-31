@@ -21,8 +21,6 @@ export const pageQuery = graphql`
           title
           greetings
           emoji
-          subtitlePrefix
-          subtitleHighlight
         }
         rawMarkdownBody
       }
