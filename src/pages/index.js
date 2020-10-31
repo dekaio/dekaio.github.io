@@ -1,16 +1,37 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
-
-
-const IndexPage = () => {
+import Details from "../components/details"
+const IndexPage = ({data}) => {
   return (
   <Layout>
-  <h1>Hi people</h1>
+  <Details content ={data.details.edges[0].node}/>
   </Layout>
   )
   
 }
+export default IndexPage
+
+export const pageQuery = graphql`
+{
+  details: allMarkdownRemark{
+    edges{
+      node{
+        frontmatter{
+          title
+          greetings
+          emoji
+          subtitlePrefix
+          subtitleHighlight
+        }
+        rawMarkdownBody
+      }
+    }
+  }
+}
+`
+
     
     
 
-export default IndexPage
+
